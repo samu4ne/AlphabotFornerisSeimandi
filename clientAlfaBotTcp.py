@@ -7,21 +7,21 @@ registered = False
 nickname = ""
 SERVER=('192.168.0.128', 3450)
 class Receiver(thr.Thread):
-    def __init__(self, s): 
-        thr.Thread.__init__(self)
-        self.running = True 
-        self.s = s
+    def __init__(self, s): #Costruttore Thread, self è come il this, s è il socket
+        thr.Thread.__init__(self)  #costruttore 
+        self.running = True   #fino a quando esiste
+        self.s = s 
 
-    def stop_run(self):
+    def stop_run(self): #in caso di stop
         self.running = False
 
-    def run(self):
+    def run(self): #in caso di running
         global registered
 
         while self.running:
-            data = self.s.recv(4096).decode()
+            data = self.s.recv(4096).decode()   #ricezione
             
-            if data == "OK":
+            if data == "OK":    #Se riceve OK, la connessione è avvenuta
                 registered = True
                 logging.info(f"\nConnessione avvenuta, registrato. Entrando nella chat mode...")
             
@@ -29,24 +29,23 @@ class Receiver(thr.Thread):
                 logging.info(f"\n{data}")
 
 def main():
-    print("Ciao")
     global registered
     global nickname
-    s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    s = socket.socket(socket.AF_INET, socket.SOCK_STREAM) #creo un socket TCP / IPv4, primo che manda, creo la base che fa tutto
     s.connect(SERVER)
 
-    ricev = Receiver(s)
+    ricev = Receiver(s) #per far modo che il server quando rimanda il messaggio ai client arriva a tutti senza dover mettere un'altro messaggio prima che arrivi, riceve i messaggi
     ricev.start()
 
     while True:
         time.sleep(0.2)
 
-        comando = input("Inserisci il comando >>>")
+        comando = input("Inserisci il comando >>>") #prende in input dall'utente il comando
 
-        s.sendall(comando.encode())
+        s.sendall(comando.encode()) #manda il messaggio al server
 
-        if 'exit' in comando:
-            ricev.stop_run()
+        if 'exit' in comando:   #In caso si dovesse interrompere la connessione
+            ricev.stop_run()    #interrompe la connessione
             logging.info("Disconnessione...")
             break
 
