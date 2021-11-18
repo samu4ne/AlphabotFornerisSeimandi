@@ -1,7 +1,9 @@
 # Alphabot
+Progetto eseguito da Forneris Samuele, [Seimandi Alessandro](https://github.com/AleSeima)
+
 L'Alphabot viene comandato da remoto, attraverso un client e server con tecnologia tcp.
 
-
+Una volta che il server a ricevuto i messaggi con le azioni e interpretati abbiamo utilizzato la libreria RPi.GPIO è stato possibile comandare i motori elettrici attraverso il raspberry.
 
 
 
@@ -10,6 +12,20 @@ L'Alphabot viene comandato da remoto, attraverso un client e server con tecnolog
 
 ## Implementazione con un DataBase
 Una volta che il server (Raspberry) ha ricevuto i messaggi, li interpreta, cercandoli all'interno del DataBase, azionando così i motori per un tot di secondi.
+
+Nel database sono presenti i possibili comandi da far eseguire al robot, questi possono essere semplici come destra, sinistra.., o più complessi come fargli percorrere un otto o uno zig zag
+
+#### Nel database sono presenti tre sezioni:
+
+ID: numero del comando
+
+NAME: denominazione del comando
+
+SEQUENZA: qui sono presenti le serie di operazioni per far eseguire il comando completo indicato nella sezione NAME. 
+
+LETTERE: indicano la direzione in cui far muovere l'Alphabot, dettata da WASD (avanti, sinistra, indietro, destra)
+
+NUMERI: indicano la durata della direzione da mantenere (ovvero della lettera che precede il numero)
 
 ![Schermata da 2021-11-18 08-22-19](https://user-images.githubusercontent.com/72200995/142370591-e9a728ca-1074-4783-8329-a5c3b1e6e8c5.png)
 
