@@ -16,15 +16,15 @@ Nel database sono presenti i possibili comandi da far eseguire al robot, questi 
 
 #### Nel database sono presenti tre sezioni:
 
-**ID:** numero del comando
+**ID:** chiave primaria
 
 **NAME:** denominazione del comando
 
-**SEQUENZA:** qui sono presenti le serie di operazioni per far eseguire il comando completo indicato nella sezione NAME. 
+**SEQUENZA:** qui sono presenti le serie di operazioni per far eseguire il comando completo indicato nella sezione NAME. Questa è suddivisa in:
 
-L**ETTERE:** indicano la direzione in cui far muovere l'Alphabot, dettata da WASD (avanti, sinistra, indietro, destra)
+   **LETTERE:** indicano la direzione in cui far muovere l'Alphabot, dettata da WASD (avanti, sinistra, indietro, destra)
 
-**NUMERI:** indicano la durata della direzione da mantenere (ovvero della lettera che precede il numero)
+   **NUMERI:** indicano la durata della direzione da mantenere (ovvero della lettera che precede il numero)
 
 ![Schermata da 2021-11-18 08-22-19](https://user-images.githubusercontent.com/72200995/142370591-e9a728ca-1074-4783-8329-a5c3b1e6e8c5.png)
 
