@@ -15,7 +15,7 @@ class Receiver(thr.Thread):
     def stop_run(self): #in caso di stop
         self.running = False
 
-    def run(self): #in caso di running
+    def run(self): #Al suo interno vengono eseguite tutte le zioni 
         global registered
 
         while self.running:
@@ -32,13 +32,13 @@ def main():
     global registered
     global nickname
     s = socket.socket(socket.AF_INET, socket.SOCK_STREAM) #creo un socket TCP / IPv4, primo che manda, creo la base che fa tutto
-    s.connect(SERVER)
+    s.connect(SERVER)       #connessione al server
 
-    ricev = Receiver(s) #per far modo che il server quando rimanda il messaggio ai client arriva a tutti senza dover mettere un'altro messaggio prima che arrivi, riceve i messaggi
+    ricev = Receiver(s) #riceve i messaggi, per far modo che il server quando rimanda il messaggio ai client arriva a tutti
     ricev.start()
 
     while True:
-        time.sleep(0.2)
+        time.sleep(0.2) 
 
         comando = input("Inserisci il comando >>>") #prende in input dall'utente il comando
 
