@@ -3,7 +3,7 @@ Progetto eseguito da Forneris Samuele, [Seimandi Alessandro](https://github.com/
 
 L'Alphabot viene comandato da remoto, attraverso un client e server con tecnologia tcp.
 
-Una volta che il server a ricevuto i messaggi con le azioni e interpretati abbiamo utilizzato la libreria RPi.GPIO è stato possibile comandare i motori elettrici attraverso il raspberry.
+Una volta che il server ha ricevuto i messaggi con le azioni e interpretati abbiamo utilizzato la libreria RPi.GPIO è stato possibile comandare i motori elettrici attraverso il raspberry.
 
 
 
