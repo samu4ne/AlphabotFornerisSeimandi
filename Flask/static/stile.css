@@ -1,0 +1,42 @@
+body {
+    background: rgb(0, 153, 255);
+    color: yellow;
+}
+
+h1{
+    text-align: center;
+}
+
+h2{
+    text-align: center;
+}
+
+.column{
+    width: 29%;
+    float: left;
+    text-align:"center";
+    padding: 2%;
+}
+
+#stringaInput{
+    background-color:yellow;
+}
+
+#stringa{
+    text-align: center;
+    height: 30px;
+    font-size: 20px;
+    background-color:yellow;
+}
+
+#button{
+    text-align: center;
+    height: 100px;
+    font-size: 30px;
+    background-color:yellow;
+}
+
+#AllButton{
+    text-align: center;
+    vertical-align:text-bottom;
+}
